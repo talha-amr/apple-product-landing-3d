@@ -2,7 +2,6 @@ import React from 'react'
 import { navItems } from '../constants'
 
 const Navbar = () => {
-
   return (
     <header>
       <nav>
