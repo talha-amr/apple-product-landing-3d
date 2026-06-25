@@ -184,17 +184,17 @@ body {
     @apply relative;
 
     .media {
-      @apply relative lg:overflow-hidden;
+      @apply relative overflow-hidden h-dvh;
 
       video {
-        @apply w-full object-cover object-center;
+        @apply w-full h-full object-cover object-center;
       }
 
       .mask {
-        @apply absolute h-full top-0 lg:-top-20 xl:top-0;
+        @apply absolute inset-0 w-full h-full flex items-center justify-center;
 
         img {
-          @apply h-full scale-150 lg:scale-100;
+          @apply min-w-full min-h-full scale-150 lg:scale-100;
           transform: matrix(80, 0, 0, 80, 0, 0);
         }
 
@@ -207,7 +207,7 @@ body {
     }
 
     .content {
-      @apply relative z-10 my-5 lg:-mt-40 bg-black font-semibold text-xl text-dark-100 lg:opacity-0;
+      @apply relative z-10 my-5 lg:-mt-[6vw] bg-black font-semibold text-xl text-dark-100 lg:opacity-0;
 
       .wrapper {
         @apply container mx-auto px-5 pb-20 2xl:px-0 flex flex-col lg:flex-row justify-center gap-20;
