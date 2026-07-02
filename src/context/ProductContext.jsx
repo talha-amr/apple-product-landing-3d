@@ -5,9 +5,9 @@ const ProductContext = createContext();
 export const ProductProvider = ({ children }) => {
   const [color, setColor] = useState('#2e2e2c');
   const [scale, setScale] = useState('0.08');
-
+  const [texture,setTexture]=useState('/videos/feature-1.mp4')
   return (
-    <ProductContext.Provider value={{ color, setColor, scale, setScale }}>
+    <ProductContext.Provider value={{ color, setColor, scale, setScale,texture,setTexture }}>
       {children}
     </ProductContext.Provider>
   );
