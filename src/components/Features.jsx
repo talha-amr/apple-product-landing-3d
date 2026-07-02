@@ -72,7 +72,7 @@ const Features = () => {
         <h2>See it all in a new light.</h2>
         <Canvas id='f-canvas'>
             <StudioLights/>
-            <ambientLight intensity={0.3}/>
+            <ambientLight intensity={10}/>
              <CameraRig position={[0, 2, 5]} target={[0, 0, 0]} />
             
             <ModelScroll/>

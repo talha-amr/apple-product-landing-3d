@@ -18,7 +18,6 @@ export const noChangeParts = [
     "Object_125",
     "Object_76",
     "Object_33",
-    "Object_42",
     "Object_58",
     "Object_52",
     "Object_21",
