@@ -12,14 +12,14 @@ const StudioLights = () => {
             <group>
                 <Lightformer 
                   form={"rect"}
-                  intensity={8}
+                  intensity={25}
                   position={[-10, 5, -5]}
                   scale={10}
                   rotation={[1.6, 0, 0]}
                 ></Lightformer>
                 <Lightformer 
                   form={"rect"}
-                  intensity={8}
+                  intensity={25}
                   position={[10, 10, -5]}
                   scale={10}
                   rotation={[1.6, 0, 0]}
@@ -36,7 +36,7 @@ const StudioLights = () => {
 
 
         {/* Chassis fill — pointLight works on ALL material types */}
-        <pointLight position={[0, -5, -3]} intensity={7} decay={0} color="#ffffff" />
+        <pointLight position={[0, -5, -3]} intensity={4} decay={0} color="#ffffff" />
     </group>
   )
 }
