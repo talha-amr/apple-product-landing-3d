@@ -1,5 +1,5 @@
 import { Canvas } from '@react-three/fiber'
-import React, { Suspense,useEffect,useRef } from 'react'
+import React, { Suspense, useEffect, useRef, startTransition } from 'react'
 import { Html } from '@react-three/drei'
 import StudioLights from './three/StudioLights'
 import { AmbientLight } from 'three'
@@ -12,20 +12,6 @@ import CameraRig from './three/CameraRig'
 const ModelScroll=()=>{
     const groupRef=useRef(null);
     const {texture,setTexture}= useProduct();
-    //preloading all videos 
-    useEffect(()=>{
-        featureSequence.forEach((feature)=>{
-            const v =document.createElement("video");
-            Object.assign(v,{
-                src:feature.videoPath,
-                muted:true,
-                playsInline:true,
-                preload:"auto",
-                crossOrigin:"anonymous"
-            });
-            v.load();
-        })
-    },[])
     useGSAP(()=>{
         const modelTimeline=gsap.timeline({
             scrollTrigger:{
@@ -50,12 +36,12 @@ const ModelScroll=()=>{
                 ease:"power1.inOut"
             });
         }
-        Timeline.call(()=>setTexture('/videos/feature-1.mp4')).to(".box1",{opacity:1,y:0,delay:1});
-        Timeline.call(()=>setTexture('/videos/feature-2.mp4')).to(".box2",{opacity:1,y:0,});
-        Timeline.call(()=>setTexture('/videos/feature-3.mp4')).to(".box3",{opacity:1,y:0,});
-        Timeline.call(()=>setTexture('/videos/feature-4.mp4')).to(".box4",{opacity:1,y:0,});
-        Timeline.call(()=>setTexture('/videos/feature-5.mp4')).to(".box5",{opacity:1,y:0,});
-        
+        Timeline
+            .to(".box1", { opacity: 1, y: 0, delay: 1 })
+            .to(".box2", { opacity: 1, y: 0 })
+            .to(".box3", { opacity: 1, y: 0 })
+            .to(".box4", { opacity: 1, y: 0 })
+            .to(".box5", { opacity: 1, y: 0 });
     },[]);
     return (
         <group ref={groupRef}>

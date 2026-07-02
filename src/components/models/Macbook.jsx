@@ -13,11 +13,15 @@ import { useGLTF, useVideoTexture } from '@react-three/drei'
 import { Color } from 'three'
 import { useProduct } from '../../context/ProductContext'
 import { noChangeParts } from '../../constants'
+
 export default function MacbookModel(props) {
-  const { color,texture} = useProduct();
-  const { nodes, materials,scene } = useGLTF('/models/macbook-transformed.glb')
-  const screen= useVideoTexture(texture);
-    useEffect(()=>{
+  const { color, texture } = useProduct();
+  const { nodes, materials, scene } = useGLTF('/models/macbook-transformed.glb')
+  
+  // Reverting back to original useVideoTexture
+  const screen = useVideoTexture(texture);
+
+  useEffect(()=>{
       scene.traverse((child)=>{
         if(child.isMesh){
           if(!noChangeParts.includes(child.name)){
